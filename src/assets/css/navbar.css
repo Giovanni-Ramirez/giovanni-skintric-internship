@@ -1,0 +1,40 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 22px;
+    margin-bottom: 12px;
+}
+
+.left_nav_container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.nav_font {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: -0.8px;
+}
+
+.faded {
+    color: rgba(0, 0, 0, 0.433);
+}
+
+.nav__btn {
+    background-color: black;
+    color: white;
+    border: none;
+    margin: 0 16px;  
+    padding: 8px 16px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.span_spacing {
+    margin: 0 6px;
+}
