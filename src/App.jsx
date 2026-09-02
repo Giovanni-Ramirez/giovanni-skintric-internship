@@ -21,7 +21,7 @@ function App() {
 
         {/* right button */}
         <div className="outer_sqaure right_square"></div>
-        <Link to={'test'} className='landing__button_container right_text_container'>
+        <Link to={'testing'} className='landing__button_container right_text_container'>
           <p className='landing__button_text'>TAKE TEST</p>
           <div className="landing__button right__button">
             <IoTriangleSharp  className='landing__button_icon'/>
