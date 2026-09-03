@@ -1,0 +1,61 @@
+.left_square {
+    transition: all 0.4s ease;
+    position: absolute;
+    left: -255px;
+}
+
+.right_square {
+    transition: all 0.4s ease;
+    position: absolute;
+    right: -255px;
+}
+
+.landing__button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left__button {
+    transform: rotate(225deg);
+    left: 60px;
+    transition: all 0.3s ease;
+}
+
+.right__button {
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+.landing__button_icon {
+    transform: rotate(45deg);
+    font-size: 10px;
+}
+
+.landing__button_container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    gap: 12px;
+}
+
+.left_text_container {
+    transition: all 0.4s ease;
+    left: 100px;
+}
+
+.right_text_container {
+    transition: all 0.4s ease;
+    right: 100px;
+}
+
+.landing__button_text {
+    font-size: clamp(10px, 2px + .625vw, 14px);
+    font-weight: 400;
+    letter-spacing: -.02em;
+    line-height: 1.6;
+    font-size: 14px;
+}
