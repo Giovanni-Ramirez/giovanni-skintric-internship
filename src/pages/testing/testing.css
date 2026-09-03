@@ -5,11 +5,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
 }
 
 .step_content {
     text-align: center;
     margin-bottom: 100px;
+    z-index: 10;
 }
 
 .step_content input {
@@ -52,4 +54,68 @@
     bottom: 20px;
     display: flex;
     justify-content: space-between;
+}
+
+/* BACKGROUND BOXES */
+.background__boxes {
+    pointer-events: none;
+}
+
+
+@keyframes spinFrom80 {
+    0% {
+        transform: translate(-50%, -50%) rotate(-80deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes spinFrom70 {
+    0% {
+        transform: translate(-50%, -50%) rotate(-70deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes spinFrom60 {
+    0% {
+        transform: translate(-50%, -50%) rotate(-60deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.background__box_inner {
+    width: 500px;
+    height: 500px;
+    border: 2px dotted rgba(0, 0, 0, 0.401);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(80deg);
+    animation: spinFrom80 85s linear infinite; 
+}
+.background__box_middle {
+    width: 550px;
+    height: 550px;
+    border: 2px dotted rgba(0, 0, 0, 0.261);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(70deg);
+    animation: spinFrom70 75s linear infinite; 
+}
+.background__box_outer {
+    width: 600px;
+    height: 600px;
+    border: 2px dotted rgba(0, 0, 0, 0.155);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(60deg);
+    animation: spinFrom60 60s linear infinite; 
 }

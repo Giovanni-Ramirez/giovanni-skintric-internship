@@ -3,6 +3,8 @@ import './testing.css'
 import { GoDotFill } from "react-icons/go";
 import LeftButton from "../../components/leftButton";
 import RightButton from '../../components/rightButton';
+import { Link } from "react-router-dom";
+import Navbar from '../../components/navbar';
 
 export default function Testing() {    
     const [step, setStep] = useState(1);
@@ -13,7 +15,8 @@ export default function Testing() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
+        const lettersAndSpacesOnly = value.replace(/[^\p{L}\s]/gu, '');
+        setFormData((prev) => ({ ...prev, [name]: lettersAndSpacesOnly }));
     };
 
     const handleKeyDown = (e) => {
@@ -30,6 +33,7 @@ export default function Testing() {
     // Submission handler
     const handleSubmit = (e) => {
         e.preventDefault();
+        localStorage.setItem('userNameLocation', JSON.stringify(formData));
         setStep(3); // Show loading state
 
         fetch('https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseOne', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) })
@@ -45,7 +49,15 @@ export default function Testing() {
     };
 
     return (
+        <>
+        <Navbar />
         <div className="form-box">
+
+            <div className="background__boxes">
+                <div className="background__box_inner"></div>
+                <div className="background__box_middle"></div>
+                <div className="background__box_outer"></div>
+            </div>
 
             <form onSubmit={handleSubmit}>
                 {/* Step 1: Name */}
@@ -60,6 +72,7 @@ export default function Testing() {
                     onChange={handleChange}
                     onKeyDown={handleKeyDown}
                     placeholder="Introduce Yourself"
+                    pattern="[A-Za-zÀ-ÖØ-öø-ÿ ]+"
                     required
                     />
                 </div>
@@ -77,6 +90,7 @@ export default function Testing() {
                     onChange={handleChange}
                     onKeyDown={handleKeyDown}
                     placeholder="Where are you from?"
+                    pattern="[A-Za-zÀ-ÖØ-öø-ÿ ]+"
                     required
                     />
                 </div>
@@ -104,8 +118,13 @@ export default function Testing() {
             <div className="bottom__control_bar">
                 <LeftButton text={'BACK'}/>
                 
-                <RightButton text={'PROCEED'}/>
+                {step === 4 && (
+                    <Link to={'/result'}>
+                        <RightButton text={'PROCEED'}/>
+                    </Link>
+                )}
             </div>
         </div>
+        </>
     );
 }
