@@ -1,0 +1,134 @@
+.anaylsis__page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.options__container {
+    width: 340px;
+    height: 340px;
+    display: flex;
+    flex-wrap: wrap;
+    transform: rotate(-45deg);
+    position: relative;
+}
+
+.options {
+    width: calc(50% - 6px);
+    background-color: #f3f3f3;
+    margin: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -2%;
+    text-align: center;
+    transition: background-color 0.4s ease;
+    cursor: pointer;
+}
+
+.options:hover {
+    background-color:#E1E1E2;
+}
+
+.demographics_btn {
+    transition: scale 0.5s ease;
+}
+
+.demographics_btn:hover {
+    transform: scale(1.04);
+}
+
+.rotated__text {
+    display: inline-block;
+    transform: rotate(45deg);
+}
+
+.bg_box {
+    position: absolute;
+    top: 50%;    
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.bg_box_inner {
+    border: 2px dotted rgba(0, 0, 0, 0.311);
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.options__container:has(.demographics_btn:hover) .bg_box_inner {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.bg_box_middle {
+    border: 2px dotted rgba(0, 0, 0, 0.253);
+    width: 450px;
+    height: 450px;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.options__container:has(.skin_type_btn:hover) .bg_box_middle, 
+.options__container:has(.cosmetic_btn:hover) .bg_box_middle {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.bg_box_outer {
+    border: 2px dotted rgba(0, 0, 0, 0.097);
+    width: 500px;
+    height: 500px;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.options__container:has(.weather_btn:hover) .bg_box_outer {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* loading page */
+
+.loading_bg_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.inner__box {
+    border: 2px dotted rgba(0, 0, 0, 0.387);
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.middle__box {
+    border: 2px dotted rgba(0, 0, 0, 0.231);
+    width: 350px;
+    height: 350px;
+    transform: translate(-50%, -50%) rotate(55deg);
+}
+.outer__box {
+    border: 2px dotted rgba(0, 0, 0, 0.108);
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%) rotate(63deg);
+}
+
+/* bottom__bar_container */
+.bottom__bar_container {
+    width: 100%;
+    position: absolute;
+    bottom: 80px;
+}
