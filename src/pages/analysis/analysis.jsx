@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Navigate, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/navbar";
 import LeftButton from "../../components/leftButton";
 import RightButton from "../../components/rightButton";
@@ -11,6 +11,7 @@ export default function Analysis() {
 
     const { state } = useLocation();
     const base64Image = state?.photoBase64;
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!base64Image) {
@@ -31,13 +32,15 @@ export default function Analysis() {
             const result = await response.json();
             setIsLoading(false);
             setSummary(result);
+            localStorage.setItem('resultsSummary', JSON.stringify(result));
+            console.log(result);
         } catch (error) {
             console.error('Error sending photo:', error);
         }
         };
 
         postImage();
-    }, [base64Image]);
+    }, [base64Image, summary]);
 
     return (
         <div className="anaylsis__page">
@@ -70,11 +73,11 @@ export default function Analysis() {
 
             {!isLoading && (
                 <div className="bottom__bar_container">
-                    <Link 
+                    <Link
                         to='..'
                         onClick={(e) => {
                             e.preventDefault();
-                            Navigate(-1);
+                            navigate(-1);
                         }}>
                         <LeftButton  text={'BACK'}/>
                     </Link>

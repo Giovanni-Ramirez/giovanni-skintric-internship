@@ -5,7 +5,7 @@ function nabar() {
     return (
         <nav className="navbar">
             <div className='left_nav_container'>
-                <Link to="/idk" className='nav_font'><p>sKINsTRIC</p></Link>
+                <Link to="/idk" className='nav_font'><p>SKINSTRIC</p></Link>
                 <p className='nav_font faded'>[<span className='span_spacing'>INTRO</span>]</p>
             </div>
             <div>

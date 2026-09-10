@@ -8,6 +8,7 @@ import App from './App.jsx';
 import Testing from './pages/testing/testing.jsx';
 import Result from './pages/result/result.jsx';
 import Analysis from './pages/analysis/analysis.jsx';
+import Summary from './pages/summary/summary.jsx';
 import NotFound from './pages/notFound.jsx';
 
 // Routes
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
     path: '/analysis',
     element: <Analysis />,
     errorElement: <NotFound />,
+  },
+  {
+    path: '/summary',
+    element: <Summary />,
+    // errorElement: <NotFound />,
   }
 ])
 
