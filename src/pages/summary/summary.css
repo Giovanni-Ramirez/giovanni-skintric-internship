@@ -1,0 +1,155 @@
+.summary__page {
+    padding: 40px;
+}
+
+.summary__title_container {
+    margin-top: 50px;
+}
+
+.summary__title_ai {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.summary__title {
+    font-size: 72px;
+}
+
+.summary__sub_title {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.summary__details_container{
+    /* background-color: chartreuse; */
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary__catagories {
+    /* background-color: cornflowerblue; */
+    display: flex;
+    flex-direction: column;
+}
+
+.summary__catagory {
+    border-top: 1px solid black;
+    background-color:#eaeaea;
+    margin-bottom: 20px;
+    min-width: 150px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.summary__catatory_selection {
+margin-bottom: 10px;
+}
+
+/* main information with percentage */
+
+.summary__main_information {
+    background-color:#eaeaea;
+    border-top: 1px solid black;
+    width: 100%;
+    margin: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary__main_title {
+    font-size: 40px;
+    font-weight: 350;
+    padding: 10px 0 0 20px;
+}
+
+.summary__results_options_container {
+    border-top: 1px solid black;
+    background-color:#eaeaea;
+    width: 30%;
+}
+
+.summary__results_title_bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.summary__result_option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.summary__result_option_icon {
+    width: 10px;
+    height: 10px;
+    /* background-color: black; */
+    border: 1.5px solid black;
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary__result_icon_dot {
+    width: 70%;
+    height: 70%;
+}
+
+.summary__results_option_title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.selected {
+    background-color: black;
+    color: white;
+}
+
+.selected_icon {
+    border: 1.5px solid white;
+}
+
+.selected_icon_dot {
+    background-color: white;
+}
+
+.cirle_percent {
+    font-size: 28px;
+    position: absolute;
+}
+
+.bottom__bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    padding: 0px 40px 20px 40px;
+}
+
+.btn {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    padding: 8px 16px;
+}
+
+.white_btn {
+    background-color: white;
+    color: black;
+    margin-right: 12px;
+}
+
+.bottom__bar_text {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(160, 164, 171);
+}
