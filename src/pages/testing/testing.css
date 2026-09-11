@@ -54,6 +54,7 @@
     bottom: 20px;
     display: flex;
     justify-content: space-between;
+    padding: 0 30px;
 }
 
 /* BACKGROUND BOXES */

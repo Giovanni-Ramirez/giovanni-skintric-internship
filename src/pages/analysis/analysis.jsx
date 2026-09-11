@@ -33,14 +33,14 @@ export default function Analysis() {
             setIsLoading(false);
             setSummary(result);
             localStorage.setItem('resultsSummary', JSON.stringify(result));
-            console.log(result);
+            // console.log(result);
         } catch (error) {
             console.error('Error sending photo:', error);
         }
         };
 
         postImage();
-    }, [base64Image, summary]);
+    }, [base64Image]);
 
     return (
         <div className="anaylsis__page">
@@ -73,12 +73,7 @@ export default function Analysis() {
 
             {!isLoading && (
                 <div className="bottom__bar_container">
-                    <Link
-                        to='..'
-                        onClick={(e) => {
-                            e.preventDefault();
-                            navigate(-1);
-                        }}>
+                    <Link to={'/result'}>
                         <LeftButton  text={'BACK'}/>
                     </Link>
                     <Link to={'/summary'}>
