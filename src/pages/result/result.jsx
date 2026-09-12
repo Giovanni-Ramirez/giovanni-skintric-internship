@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CameraIcon from '../../assets/camera-icon.webp';
 import GalleryIcon from '../../assets/gallery-icon.webp';
 import lineIcon from '../../assets/ResGalleryLine.webp';
@@ -8,6 +8,7 @@ import LeftButton from "../../components/leftButton";
 import Navbar from "../../components/navbar";
 
 export default function Result() {
+    const [isCameraModalOpen, setIsCameraModalOpen] = useState(false);
     const [photoBase64, setPhotoBase64] = useState();
     const navigate = useNavigate();
 
@@ -26,6 +27,10 @@ export default function Result() {
         }
     };
 
+    const toggleCameraModal = () => {
+        setIsCameraModalOpen(!isCameraModalOpen)
+    }
+
 
     return (
         <div className="result__page">
@@ -42,7 +47,7 @@ export default function Result() {
                 <Navbar className='navbar'/>
                 <div className="result__options_wrapper">
                     <div className="option__container camera__btn">
-                        <label htmlFor="" style={{ display: 'inline-block', cursor: 'pointer' }}>
+                        <label htmlFor="" style={{ display: 'inline-block', cursor: 'pointer' }} onClick={toggleCameraModal}>
                             <img className="option__icon" src={CameraIcon} alt="Choose a photo from gallery"  />
                         </label>
                         <img className="line_icon_camera" src={lineIcon} alt="" />
@@ -52,9 +57,26 @@ export default function Result() {
                             <div className="box__inner box"></div>
                             <div className="box__middle box"></div>
                             <div className="box__outer box"></div>
+                        
+                        {isCameraModalOpen && (
+                            <div className="camera_pop_up_request_container">
+                                <div className="request_text">
+                                    ALLOW A.I. TO ACCESS YOUR CAMERA
+                                </div>
+                                <div className="camera_pop_up_bottom_btn">
+                                    <button className="btn_deny" onClick={toggleCameraModal}>DENY</button>
+                                    <Link to={'/camera'}>
+                                        <button>ALLOW</button>
+                                    </Link>
+                                </div>
+                            </div>
+                        )}
+
                     </div>
 
-                    <div className="option__container gallery__btn">
+                    <div className={isCameraModalOpen 
+                    ? "option__container gallery__btn faded"
+                    : "option__container gallery__btn"}>
                         <label htmlFor="photo-upload" style={{ display: 'inline-block', cursor: 'pointer' }}>
                             <img className="option__icon" src={GalleryIcon} alt="Choose a photo"  />
                         </label>

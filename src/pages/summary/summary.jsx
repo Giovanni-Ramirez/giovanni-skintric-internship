@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Navbar from "../../components/navbar";
 import './summary.css'
 import LeftButton from '../../components/leftButton';
-import RightButton from '../../components/rightButton';
+import { Link } from "react-router-dom";
 
 
 export default function Summary() {
@@ -130,7 +130,7 @@ export default function Summary() {
                         {Object.keys(data).map((categoryName) => {
                             const subData = data[categoryName];
                             const entries = Object.entries(subData);
-                            const [highestKey, highestValue] = entries.reduce((max, current) => {
+                            const [highestKey] = entries.reduce((max, current) => {
                                 return current[1] > max[1] ? current : max;
                             }, entries[0]);
 
@@ -204,6 +204,7 @@ export default function Summary() {
                                 {percentage}<span className="cirle_percent">%</span>
                             </div>
                         </div>
+                        <div className="Summary__main_sub_text"></div>
                     </div>
 
                     <div className="summary__results_options_container">
@@ -291,14 +292,18 @@ export default function Summary() {
 
                 <div className="bottom__btn_bar"></div>
             </div>
-            <div className="bottom__bar">
-                <LeftButton  text={'back'}/>
+            <div className="bottom__bar_summary">
+                <Link to={-1}>
+                    <LeftButton  text={'back'}/>
+                </Link>
 
                 <div className="bottom__bar_text">If A.I. estimate is wrong, select the correct one.</div>
 
                 <div className="btn__container">
                     <button className="btn white_btn">RESET</button>
-                    <button className="btn">CONFIRM</button>
+                    <Link to={'/'}>
+                        <button className="btn">CONFIRM</button>
+                    </Link>
                 </div>
             </div>
         </>

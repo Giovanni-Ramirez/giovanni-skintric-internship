@@ -116,7 +116,9 @@ export default function Testing() {
             )}
 
             <div className="bottom__control_bar">
-                <LeftButton text={'BACK'}/>
+                <Link to={-1}>
+                    <LeftButton text={'BACK'}/>
+                </Link>
                 
                 {step === 4 && (
                     <Link to={'/result'}>

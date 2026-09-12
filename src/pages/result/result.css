@@ -157,3 +157,117 @@
     height: 100%;
     object-fit: cover;
 }
+
+/* Pop up camera request (modal) */
+
+.camera_pop_up_request_container {
+    background-color: #1A1B1C;
+    color: white;
+    width: 352px;
+    height: 136px;
+    position: absolute;
+    right: -200px;
+    bottom: 150px;
+}
+
+.request_text {
+    color: white;
+    height: 60px;
+    border-bottom: 1px solid white;
+    padding: 12px;
+    height: 80%;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+}
+
+.camera_pop_up_bottom_btn{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.camera_pop_up_bottom_btn button {
+    background-color: #1A1B1C;
+    color: white;
+    border: none;
+}
+
+.camera_pop_up_bottom_btn .btn_deny {
+    color: #fcfcfca2;
+}
+
+.faded {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+@media (max-width: 770px) {
+    .result__options_wrapper {
+        flex-direction: column;
+        width: auto;
+        height: 100vh;
+    }
+
+    .option__icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .line_icon_camera {
+        display: none;
+    }
+
+    .line_icon_gallery {
+        display: none;
+    }
+
+    .camera__text {
+        right: auto;
+        top: auto;
+        bottom: 10%;
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .gallery__text {
+        left: auto;
+        top: auto;
+        bottom: 10%;
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .box__inner {
+        width: 150px;
+        height: 150px;
+    }
+    .box__middle {
+        width: 190px;
+        height: 190px;
+    }
+    .box__outer {
+        width: 230px;
+        height: 230px;
+    }
+    
+    .preview__img_wrapper {
+        width: 96px;
+        height: 96px;
+    }
+    
+    .preview__img_container {
+        width: 96px;
+        right: 0px;
+        margin-right: 20px;
+    }
+    
+    .camera_pop_up_request_container {
+        right: auto;
+        width: 320px;
+    }
+}

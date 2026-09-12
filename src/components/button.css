@@ -6,7 +6,6 @@
 .right_square {
     transition: all 0.4s ease;
     /* position: absolute; */
-    right: -255px;
 }
 
 .landing__button {
@@ -16,6 +15,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.white__btn {
+    border: 1px solid white;
 }
 
 .left__button {
@@ -34,6 +37,10 @@
     font-size: 10px;
 }
 
+.white__btn_icon {
+    color: white;
+}
+
 .landing__button_container_component {
     display: flex;
     align-items: center;
@@ -48,7 +55,6 @@
 
 .right_text_container {
     transition: all 0.4s ease;
-    right: 100px;
 }
 
 .landing__button_text {
@@ -57,4 +63,8 @@
     letter-spacing: -.02em;
     line-height: 1.6;
     font-size: 14px;
+}
+
+.white_text {
+    color: white;
 }

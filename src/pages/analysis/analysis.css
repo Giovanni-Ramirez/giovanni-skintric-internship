@@ -130,5 +130,8 @@
 .bottom__bar_container {
     width: 100%;
     position: absolute;
-    bottom: 80px;
+    bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
 }

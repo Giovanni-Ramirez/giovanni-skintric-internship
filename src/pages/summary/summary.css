@@ -123,11 +123,11 @@ margin-bottom: 10px;
     position: absolute;
 }
 
-.bottom__bar {
+.bottom__bar_summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: sticky;
     bottom: 0px;
     padding: 0px 40px 20px 40px;
 }
@@ -152,4 +152,43 @@ margin-bottom: 10px;
     font-size: 14px;
     font-weight: 400;
     color: rgb(160, 164, 171);
+}
+
+.Summary__main_sub_text {
+    display: none;
+}
+
+@media (max-width: 770px) {
+    .summary__title {
+        font-size: 36px;
+    }
+
+    .summary__details_container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .summary__main_title {
+        display: none;
+    }
+
+    .summary__main_information {
+        display: flex;
+        align-items: center;
+        margin: 0px 0px 24px;
+        flex-direction: column;
+    }
+
+    .bottom__bar_text {
+        display: none;
+    }
+
+    .Summary__main_sub_text {
+        display: block;
+        color: rgb(117, 117, 117);
+    }
+
+    .summary__results_options_container {
+        width: 100%;
+    }
 }
