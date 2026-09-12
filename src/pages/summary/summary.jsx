@@ -204,6 +204,7 @@ export default function Summary() {
                                 {percentage}<span className="cirle_percent">%</span>
                             </div>
                         </div>
+                        <div className="Summary__main_sub_text"></div>
                     </div>
 
                     <div className="summary__results_options_container">
@@ -291,7 +292,7 @@ export default function Summary() {
 
                 <div className="bottom__btn_bar"></div>
             </div>
-            <div className="bottom__bar">
+            <div className="bottom__bar_summary">
                 <Link to={-1}>
                     <LeftButton  text={'back'}/>
                 </Link>

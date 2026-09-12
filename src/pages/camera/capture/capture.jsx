@@ -49,15 +49,16 @@ export default function Capture() {
 
     return (
     <div className='capture__page'>
-
-        <div className='shutter__btn_contaier' onClick={takePhoto}>
-            <div className='shutter__btn_text'>TAKE PICTURE</div>
-            <div className='shutter__btn_wrapper'>
-                <div className='shutter__btn_icon_wrapper'>
-                    <img className='shutter__btn_icon' src={cameraIcon} alt="" />
+        {!base64Image && (
+            <div className='shutter__btn_contaier' onClick={takePhoto}>
+                <div className='shutter__btn_text'>TAKE PICTURE</div>
+                <div className='shutter__btn_wrapper'>
+                    <div className='shutter__btn_icon_wrapper'>
+                        <img className='shutter__btn_icon' src={cameraIcon} alt="" />
+                    </div>
                 </div>
             </div>
-        </div>
+        )}
 
         {base64Image && (
             <>
@@ -65,29 +66,33 @@ export default function Capture() {
             </>
         )}
 
+        <div className="great_shot">Great Shot!</div>
+
         <div className="bottom__bar">
             {base64Image ?
-                    <LeftButton  text={'BACK'} onClick={() => setBase64Image('')} isWhite={true}/>
+                    <LeftButton  text={'RETAKE'} onClick={() => setBase64Image('')} isWhite={true}/>
                 :
                 <div></div>
             }
-            <div className='photo_requirements'>
-                <div className='photo__requirements_title'>TO GET BETTER RESULTS MAKE SURE TO HAVE</div>
-                <div className='photo__requirements_container'>
-                    <div className="photo__requirments">
-                        <div className='photo__requirements_icon'></div>
-                        <div className='photo__requirements_text'>NEUTRAL EXPRESSION</div>
-                    </div>
-                    <div className="photo__requirments">
-                        <div className='photo__requirements_icon'></div>
-                        <div className='photo__requirements_text'>FRONTAL POSE</div>
-                    </div>
-                    <div className="photo__requirments">
-                        <div className='photo__requirements_icon'></div>
-                        <div className='photo__requirements_text'>ADEQUATE LIGHTING</div>
+            {!base64Image && (
+                <div className='photo_requirements'>
+                    <div className='photo__requirements_title'>TO GET BETTER RESULTS MAKE SURE TO HAVE</div>
+                    <div className='photo__requirements_container'>
+                        <div className="photo__requirments">
+                            <div className='photo__requirements_icon'></div>
+                            <div className='photo__requirements_text'>NEUTRAL EXPRESSION</div>
+                        </div>
+                        <div className="photo__requirments">
+                            <div className='photo__requirements_icon'></div>
+                            <div className='photo__requirements_text'>FRONTAL POSE</div>
+                        </div>
+                        <div className="photo__requirments">
+                            <div className='photo__requirements_icon'></div>
+                            <div className='photo__requirements_text'>ADEQUATE LIGHTING</div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
             {base64Image ? 
                 <RightButton text={'PROCEED'} onClick={useThisPhoto} isWhite={true}/>
                 :

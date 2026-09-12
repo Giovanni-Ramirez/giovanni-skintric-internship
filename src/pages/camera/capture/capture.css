@@ -110,3 +110,13 @@
 .capture_btn {
     color: white;
 }
+
+.great_shot {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+}
