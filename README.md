@@ -1,6 +1,6 @@
 # Skintric 
 
-This website is an advance why to go about skin care. we use AI to scan your skin and in return we give you custom skin care routine.
+This website is an advance why to go about skin care. we use AI to scan your skin and in return we give you custom skin care routine. This Will first ask for you to submit a photo from your files or photo album on mobile or as for permission to use your camera to submit a photo, The photo will then be taken and sent to the AI to scan your face to give you your custom results!
 
 ## landing page
 
