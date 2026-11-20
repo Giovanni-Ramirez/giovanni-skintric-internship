@@ -29,3 +29,34 @@ This was made using
 - made a camera configure file with functions that can be access from the whole page
 - uses your camera to take a photo
 - media screen css styling
+
+
+## Getting Started
+
+### Prerequisites
+
+* **Node.js:** `v20.19.41` (or any Node `v20.19+` / `v22` LTS)
+  * *If you use [nvm](https://github.com) (or [nvm-windows](https://github.com)), run:*
+    ```bash
+    nvm install 20.19.41
+    nvm use 20.19.41
+    ```
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com
+   cd giovanni-skintric-internship
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   Open the local URL shown in your terminal (usually [http://localhost:5173](http://localhost:5173)) to view the app, or check out the live deployment at [giovanni-skintric-internship.vercel.app](https://vercel.app).
